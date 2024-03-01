@@ -1,0 +1,11 @@
+.boxWrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .boxItem {
+    width: calc(50% - 10px); /* Adjust as needed */
+    padding: 5px;
+    box-sizing: border-box;
+  }
+  

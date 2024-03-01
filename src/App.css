@@ -1,0 +1,38 @@
+h1 {
+  text-align: center;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.course-sad {
+  display: flex;
+  justify-content: space-between;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.light-mode {
+  background-color: #ffffff;
+  color: #213547;
+}
+
+.dark-mode {
+  background-color: #242424;
+  color: rgba(255, 255, 255, 0.87);
+}

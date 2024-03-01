@@ -1,13 +1,15 @@
+import { Box, Button } from "@mui/material";
 import React, { useState } from "react";
+import "../styles/dispcourses.css";
 
 const DisplayCourses = ({ courses, addToSelected }) => {
   return (
     <div>
       {courses.map((course) => (
         <div key={course["Course Code"]}>
-          <div onClick={() => addToSelected(course)}>
+          <Button variant="text" onClick={() => addToSelected(course)}>
             {course["Course Code"]}: {course["Course Name"]}
-          </div>
+          </Button>
         </div>
       ))}
     </div>
