@@ -44,11 +44,11 @@ This project is a Timetable Generator web application built using React. It allo
 
 ## File Structure
 
-- **components:**
+- **Components:**
   - `SearchCourse.jsx`: Handles course search functionality.
   - `DisplayCourses.jsx`: Displays search results and handles course selection.
   - `Selected.jsx`: Manages selected courses and provides options to generate the timetable.
   - `Timetable.jsx`: Generates and displays the timetable.
-- **data:**
+- **Data:**
   - `timetable_data.json`: Contains course data.
   - `timetable_slots.json`: Contains timetable slots for each day of the week.

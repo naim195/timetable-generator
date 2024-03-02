@@ -28,7 +28,7 @@ export default function SearchCourse({ addToSelected, selectedCourses }) {
     if (courseNameOrID.trim() !== "") {
       const results = trie.get(courseNameOrID);
       setSearchResults(
-        results.filter((course) => !selectedCourses.includes(course)) || []
+        results.filter((course) => !selectedCourses.includes(course)) || [],
       );
     } else {
       setSearchResults([]);
@@ -43,7 +43,9 @@ export default function SearchCourse({ addToSelected, selectedCourses }) {
         variant="filled"
         onChange={(e) => setCourseNameOrID(e.target.value.toUpperCase())}
       />
-      <DisplayCourses courses={searchResults} addToSelected={addToSelected} />
+      {courseNameOrID.length > 0 && (
+        <DisplayCourses courses={searchResults} addToSelected={addToSelected} />
+      )}
     </div>
   );
 }
