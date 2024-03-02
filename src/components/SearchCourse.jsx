@@ -39,7 +39,7 @@ export default function SearchCourse({ addToSelected }) {
         id="search"
         label="Enter Course ID"
         variant="filled"
-        onChange={(e) => setCourseNameOrID(e.target.value)}
+        onChange={(e) => setCourseNameOrID(e.target.value.toUpperCase())}
       />
       <DisplayCourses courses={searchResults} addToSelected={addToSelected} />
     </div>
