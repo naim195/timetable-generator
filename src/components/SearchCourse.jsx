@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { TextField } from "@mui/material";
+import { TextField, Autocomplete } from "@mui/material";
 import TrieSearch from "trie-search";
 import timetable from "../timetable_data.json";
-import DisplayCourses from "./DisplayCourse";
 
 const removeRedundant = () => {
   timetable.forEach((course) => {
@@ -10,7 +9,7 @@ const removeRedundant = () => {
       if (course[prop].includes("\n")) {
         course[prop] = course[prop].split("\n")[0];
       }
-      if (prop === "Lecture" || prop === "Tutorial" || prop == "Lab")
+      if (prop === "Lecture" || prop === "Tutorial" || prop === "Lab")
         course[prop] = course[prop].split("\n")[0].split(",");
     }
   });
@@ -35,13 +34,29 @@ export default function SearchCourse({ addToSelected }) {
 
   return (
     <div>
-      <TextField
+      <Autocomplete
         id="search"
-        label="Enter Course ID"
-        variant="filled"
-        onChange={(e) => setCourseNameOrID(e.target.value.toUpperCase())}
+        options={searchResults}
+        getOptionLabel={(option) =>
+          `${option["Course Code"]}: ${option["Course Name"]}`
+        }
+        renderInput={(params) => (
+          <TextField
+            {...params}
+            label="Enter Course ID"
+            variant="filled"
+            onChange={(e) => setCourseNameOrID(e.target.value.toUpperCase())}
+            style={{ width: 300 }} // Adjust width here
+          />
+        )}
+        onClose={() => {}}
+        onChange={(event, value) => {
+          if (value) {
+            addToSelected(value);
+            setCourseNameOrID(""); // Reset the input after selection
+          }
+        }}
       />
-      <DisplayCourses courses={searchResults} addToSelected={addToSelected} />
     </div>
   );
 }
