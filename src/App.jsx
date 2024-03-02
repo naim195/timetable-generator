@@ -11,7 +11,7 @@ function App() {
   const addToSelected = (course) => {
     setSelectedCourses([...selectedCourses, course]);
   };
-  
+
   return (
     <>
       <h1>Timetable Generator</h1>
@@ -19,10 +19,10 @@ function App() {
         <SearchCourse addToSelected={addToSelected} />
         <Selected
           selectedCourses={selectedCourses}
+          setSelectedCourses={setSelectedCourses}
           generateTable={generateTable}
           setGenerateTable={setGenerateTable}
         />
-        
       </div>
       {generateTable === 1 && <Timetable selectedCourses={selectedCourses} />}
     </>

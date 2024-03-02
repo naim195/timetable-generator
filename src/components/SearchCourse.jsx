@@ -4,6 +4,19 @@ import TrieSearch from "trie-search";
 import timetable from "../timetable_data.json";
 import DisplayCourses from "./DisplayCourse";
 
+const removeRedundant = () => {
+  timetable.forEach((course) => {
+    for (let prop in course) {
+      if (course[prop].includes("\n")) {
+        course[prop] = course[prop].split("\n")[0];
+      }
+      if (prop === "Lecture" || prop === "Tutorial" || prop == "Lab")
+        course[prop] = course[prop].split("\n")[0].split(",");
+    }
+  });
+};
+removeRedundant();
+
 export default function SearchCourse({ addToSelected }) {
   const [courseNameOrID, setCourseNameOrID] = useState("");
   const [searchResults, setSearchResults] = useState([]);

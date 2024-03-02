@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import data from "../timetable_slots.json";
 
-const Timetable = () => {
+const Timetable = (selectedCourses) => {
   return (
     <Table>
       <TableHead>

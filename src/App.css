@@ -7,11 +7,13 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 10px;
 }
 
 .course-sad {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 #root {
