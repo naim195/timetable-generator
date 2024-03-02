@@ -8,7 +8,7 @@ import {
   Button,
 } from "@mui/material";
 import timetableSlots from "../timetable_slots.json";
-import "../styles/timetable.css" 
+import "../styles/timetable.css";
 
 const Timetable = ({ selectedCourses }) => {
   const slotToCourse = {};

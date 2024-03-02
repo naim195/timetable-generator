@@ -30,7 +30,15 @@ function App() {
         {generateTable === 1 && <Timetable selectedCourses={selectedCourses} />}
       </main>
       <footer>
-        <p>You can view the source code <a href="https://github.com/naim195/timetable-generator" target="_blank">here</a></p>
+        <p>
+          You can view the source code{" "}
+          <a
+            href="https://github.com/naim195/timetable-generator"
+            target="_blank"
+          >
+            here
+          </a>
+        </p>
       </footer>
     </div>
   );

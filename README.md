@@ -1,6 +1,5 @@
 # Timetable Generator
 
-
 This is a timetable generator for the courses offered at IITGN during the 2nd Semester, 2023-24.
 
 ---
@@ -14,14 +13,17 @@ This project is a Timetable Generator web application built using React. It allo
 ## Features
 
 1. **Search Course:**
+
    - Users can search for courses by entering their IDs.
    - The application provides real-time search results based on the input.
 
 2. **Select Courses:**
+
    - Selected courses are displayed in a list.
    - Users can easily remove courses from the selection.
 
 3. **Generate Timetable:**
+
    - Once courses are selected, users can generate a timetable.
    - The timetable displays course schedules for each day of the week.
 

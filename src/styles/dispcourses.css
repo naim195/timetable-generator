@@ -1,5 +1,5 @@
 .coursesContainer {
-  height: 300px; /* Adjust as needed */
+  height: 300px;
   overflow-y: auto;
 }
 
@@ -9,7 +9,7 @@
 }
 
 .boxItem {
-  width: calc(50% - 10px); /* Adjust as needed */
+  width: calc(50% - 10px);
   padding: 5px;
   box-sizing: border-box;
 }
