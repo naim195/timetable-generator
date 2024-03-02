@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { TextField, Autocomplete } from "@mui/material";
+import { TextField } from "@mui/material";
 import TrieSearch from "trie-search";
 import timetable from "../timetable_data.json";
+import DisplayCourses from "./DisplayCourse";
 
 const removeRedundant = () => {
   timetable.forEach((course) => {
@@ -16,7 +17,7 @@ const removeRedundant = () => {
 };
 removeRedundant();
 
-export default function SearchCourse({ addToSelected }) {
+export default function SearchCourse({ addToSelected, selectedCourses }) {
   const [courseNameOrID, setCourseNameOrID] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
@@ -26,37 +27,23 @@ export default function SearchCourse({ addToSelected }) {
     trie.addAll(timetable);
     if (courseNameOrID.trim() !== "") {
       const results = trie.get(courseNameOrID);
-      setSearchResults(results || []);
+      setSearchResults(
+        results.filter((course) => !selectedCourses.includes(course)) || []
+      );
     } else {
       setSearchResults([]);
     }
-  }, [courseNameOrID]);
+  }, [courseNameOrID, selectedCourses]);
 
   return (
     <div>
-      <Autocomplete
+      <TextField
         id="search"
-        options={searchResults}
-        getOptionLabel={(option) =>
-          `${option["Course Code"]}: ${option["Course Name"]}`
-        }
-        renderInput={(params) => (
-          <TextField
-            {...params}
-            label="Enter Course ID"
-            variant="filled"
-            onChange={(e) => setCourseNameOrID(e.target.value.toUpperCase())}
-            style={{ width: 300 }} // Adjust width here
-          />
-        )}
-        onClose={() => {}}
-        onChange={(event, value) => {
-          if (value) {
-            addToSelected(value);
-            setCourseNameOrID(""); // Reset the input after selection
-          }
-        }}
+        label="Enter Course ID"
+        variant="filled"
+        onChange={(e) => setCourseNameOrID(e.target.value.toUpperCase())}
       />
+      <DisplayCourses courses={searchResults} addToSelected={addToSelected} />
     </div>
   );
 }

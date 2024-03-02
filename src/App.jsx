@@ -19,7 +19,10 @@ function App() {
       </header>
       <main>
         <div className="course-sad">
-          <SearchCourse addToSelected={addToSelected} />
+          <SearchCourse
+            addToSelected={addToSelected}
+            selectedCourses={selectedCourses}
+          />
           <Selected
             selectedCourses={selectedCourses}
             setSelectedCourses={setSelectedCourses}
