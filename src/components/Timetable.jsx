@@ -8,6 +8,7 @@ import {
   Button,
 } from "@mui/material";
 import timetableSlots from "../timetable_slots.json";
+import "../styles/timetable.css" 
 
 const Timetable = ({ selectedCourses }) => {
   const slotToCourse = {};
@@ -65,7 +66,7 @@ const Timetable = ({ selectedCourses }) => {
           ))}
         </TableBody>
       </Table>
-      <Button variant="contained" onClick={copyToClipboard}>
+      <Button variant="contained" onClick={copyToClipboard} className="copy">
         {copied ? "Copied!" : "Copy to Clipboard"}
       </Button>
     </div>

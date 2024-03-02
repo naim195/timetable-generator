@@ -13,19 +13,26 @@ function App() {
   };
 
   return (
-    <>
-      <h1>Timetable Generator</h1>
-      <div className="course-sad">
-        <SearchCourse addToSelected={addToSelected} />
-        <Selected
-          selectedCourses={selectedCourses}
-          setSelectedCourses={setSelectedCourses}
-          generateTable={generateTable}
-          setGenerateTable={setGenerateTable}
-        />
-      </div>
-      {generateTable === 1 && <Timetable selectedCourses={selectedCourses} />}
-    </>
+    <div className="app-container">
+      <header>
+        <h1>Timetable Generator</h1>
+      </header>
+      <main>
+        <div className="course-sad">
+          <SearchCourse addToSelected={addToSelected} />
+          <Selected
+            selectedCourses={selectedCourses}
+            setSelectedCourses={setSelectedCourses}
+            generateTable={generateTable}
+            setGenerateTable={setGenerateTable}
+          />
+        </div>
+        {generateTable === 1 && <Timetable selectedCourses={selectedCourses} />}
+      </main>
+      <footer>
+        <p>You can view the source code <a href="https://github.com/naim195/timetable-generator" target="_blank">here</a></p>
+      </footer>
+    </div>
   );
 }
 

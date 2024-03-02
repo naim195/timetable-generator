@@ -7,19 +7,22 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 20px; 
+  margin: 0; 
+  padding: 20px; 
 }
 
 .course-sad {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  margin-bottom: 20px; 
 }
 
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 20px;
   text-align: center;
 }
 
