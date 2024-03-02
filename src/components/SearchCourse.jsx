@@ -10,7 +10,7 @@ const removeRedundant = () => {
       if (course[prop].includes("\n")) {
         course[prop] = course[prop].split("\n")[0];
       }
-      if ((prop === "Lecture" || prop === "Tutorial" || prop == "Lab"))
+      if (prop === "Lecture" || prop === "Tutorial" || prop == "Lab")
         course[prop] = course[prop].split("\n")[0].split(",");
     }
   });

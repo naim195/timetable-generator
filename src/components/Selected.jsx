@@ -10,7 +10,7 @@ const Selected = ({
 }) => {
   const handleDelete = (courseToDelete) => {
     setSelectedCourses(
-      selectedCourses.filter((course) => course !== courseToDelete)
+      selectedCourses.filter((course) => course !== courseToDelete),
     );
   };
 
@@ -27,12 +27,14 @@ const Selected = ({
           </ListItem>
         ))}
       </List>
-      <Button
-        variant="contained"
-        onClick={() => setGenerateTable(generateTable * -1)}
-      >
-        Generate Timetable
-      </Button>
+      {selectedCourses.length > 0 && (
+        <Button
+          variant="contained"
+          onClick={() => setGenerateTable(generateTable == -1 ? 1 : 1)}
+        >
+          Generate Timetable
+        </Button>
+      )}
     </div>
   );
 };
