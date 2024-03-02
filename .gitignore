@@ -7,7 +7,14 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
+# Ignoring all folders in node_modules except icons-material
+node_modules/**
+!node_modules/
+!node_modules/@mui/
+node_modules/@mui/**
+!node_modules/@mui/icons-material/
+
+# Dist directories
 dist
 dist-ssr
 *.local

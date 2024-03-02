@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Button, Checkbox, List, ListItem, ListItemText } from "@mui/material";
-import DeleteIcon from "@mui/icons-material";
+import DeleteIcon from "@mui/icons-material/Delete";
 
-const Selected = ({ selectedCourses, setSelectedCourses, generateTable, setGenerateTable }) => {
+const Selected = ({
+  selectedCourses,
+  setSelectedCourses,
+  generateTable,
+  setGenerateTable,
+}) => {
   const handleDelete = (courseToDelete) => {
-    setSelectedCourses(selectedCourses.filter(course => course !== courseToDelete));
+    setSelectedCourses(
+      selectedCourses.filter((course) => course !== courseToDelete)
+    );
   };
-  
 
   return (
     <div>
@@ -17,7 +23,7 @@ const Selected = ({ selectedCourses, setSelectedCourses, generateTable, setGener
             <ListItemText
               primary={`${course["Course Code"]}: ${course["Course Name"]}`}
             />
-            <DeleteIcon onClick={() => handleDelete(course)}/>
+            <DeleteIcon onClick={() => handleDelete(course)} />
           </ListItem>
         ))}
       </List>
