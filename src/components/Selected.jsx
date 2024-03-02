@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button, Checkbox, List, ListItem, ListItemText } from "@mui/material";
-import DeleteIcon from "@mui/icons-material/Delete";
+import DeleteIcon from "@mui/icons-material";
 
 const Selected = ({ selectedCourses, setSelectedCourses, generateTable, setGenerateTable }) => {
   const handleDelete = (courseToDelete) => {
