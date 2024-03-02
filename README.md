@@ -37,7 +37,7 @@ This project is a Timetable Generator web application built using React. It allo
 
 - React
 - Material-UI
-- TrieSearch (for efficient searching)
+- Trie-Search (for efficient searching)
 - JSON (for storing course and timetable data)
 
 ---
@@ -52,3 +52,5 @@ This project is a Timetable Generator web application built using React. It allo
 - **Data:**
   - `timetable_data.json`: Contains course data.
   - `timetable_slots.json`: Contains timetable slots for each day of the week.
+
+
