@@ -16,6 +16,17 @@ const Timetable = ({ selectedCourses }) => {
     course.Lecture.forEach((slot) => {
       slotToCourse[slot] = course["Course Code"];
     });
+    if (course.Tutorial.length <= 2)
+      course.Tutorial.forEach((slot) => {
+        slotToCourse[slot] = `${course["Course Code"]}(T)`;
+      });
+    if (course.Lab.length <= 2)
+      course.Lab.forEach((slot) => {
+        slotToCourse[slot] = `${course["Course Code"]}(Lab)`;
+      });
+    
+    console.log(slotToCourse);
+    console.log(course);
   });
 
   const [copied, setCopied] = useState(false);
