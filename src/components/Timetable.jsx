@@ -78,8 +78,8 @@ const Timetable = ({ selectedCourses }) => {
   return (
     <div>
       <h3>
-        Note: If your labs have sections, the generated timetable won't show the
-        lab slot. Please add your lab slot manually.
+        Note: Lab/tutorial slots for courses with multiple sections won't appear
+        in the timetable. Please add your lab slot manually for such courses.
       </h3>
       <Table ref={tableRef} className="table">
         <TableHead>
@@ -116,7 +116,10 @@ const Timetable = ({ selectedCourses }) => {
         </TableBody>
       </Table>
       <div className="btn-container">
-        <Tooltip title="Paste this in Google Sheets to modify it!!">
+        <Tooltip
+          title="Paste this in Google Sheets to modify it."
+          sx={{ fontSize: "0.9rem" }}
+        >
           <Button
             variant="contained"
             onClick={copyToClipboard}
@@ -125,7 +128,9 @@ const Timetable = ({ selectedCourses }) => {
             {copied ? "Copied!" : "Copy to Clipboard"}
           </Button>
         </Tooltip>
+
         <Button
+          sx={{ fontSize: "0.9rem" }}
           variant="contained"
           onClick={captureScreenshot}
           className="screenshot"

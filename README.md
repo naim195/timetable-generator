@@ -6,7 +6,7 @@ This is a timetable generator for the courses offered at IITGN during the 2nd Se
 
 ## Description
 
-This project is a Timetable Generator web application built using React. It allows users to search for courses by their IDs, select them, and generate a timetable based on the selected courses. The generated timetable can be copied to the clipboard for easy sharing and reference.
+This project is a Timetable Generator web application built using React. It allows users to search for courses by their IDs, select them, and generate a timetable based on the selected courses. The generated timetable can be copied to the clipboard .
 
 ---
 
@@ -28,19 +28,26 @@ This project is a Timetable Generator web application built using React. It allo
    - The timetable displays course schedules for each day of the week.
 
 4. **Copy to Clipboard:**
-   - Generated timetables can be copied to the clipboard with a single click.
-   - This feature facilitates easy sharing of timetables with others.
 
----
+   - Generated timetables can be copied to the clipboard with a single click.
+   - This facilitates easy modification of timetables in Google Sheets/Excel.
+
+5. **Take screenshot:**
+   - Users can easily take a screenshot of the generated timetable.
+
+## Unsupported Features
+
+- **Labs**: Lab/Tutorial slots for courses in which students are divided into multiple sections will not show up in the generated timetable. Only the lecture slots for such courses will be displayed on the generated timetable.
+
+- **Dynamic Data**: The application uses static JSON data and does not fetch real-time updates from Google Sheets. I do plan to add this in the future. However, anyone willing to add this functionality can create a pull request.
 
 ## Technologies Used
 
 - React
 - Material-UI
-- Trie-Search (for efficient searching)
+- [Trie-Search](https://www.npmjs.com/package/trie-search) (for efficient searching)
 - JSON (for storing course and timetable data)
-
----
+- html2canvas (for capturing screenshots of the timetable)
 
 ## File Structure
 
@@ -52,3 +59,7 @@ This project is a Timetable Generator web application built using React. It allo
 - **Data:**
   - `timetable_data.json`: Contains course data.
   - `timetable_slots.json`: Contains timetable slots for each day of the week.
+
+## Contributing
+
+Contributions are welcome. Please fork the repository and submit a pull request with your changes.

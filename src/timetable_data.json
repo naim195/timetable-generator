@@ -368,14 +368,6 @@
     "Lab": "J1,L1\n(7/108)"
   },
   {
-    "Course Code": "HS XXX",
-    "Course Name": "HSS Elective",
-    "Sections": "",
-    "Lecture": "",
-    "Tutorial": "",
-    "Lab": ""
-  },
-  {
     "Course Code": "IN 106",
     "Course Name": "Comprehensive Viva Voce (Third Year B.Tech. Students)",
     "Sections": "",
@@ -394,14 +386,6 @@
   {
     "Course Code": "8th Sem | B Tech Chemical Engineering",
     "Course Name": "",
-    "Sections": "",
-    "Lecture": "",
-    "Tutorial": "",
-    "Lab": ""
-  },
-  {
-    "Course Code": "HS XXX",
-    "Course Name": "HS Elective",
     "Sections": "",
     "Lecture": "",
     "Tutorial": "",
@@ -479,14 +463,7 @@
     "Tutorial": "",
     "Lab": ""
   },
-  {
-    "Course Code": "HS XXX",
-    "Course Name": "HSS Elective",
-    "Sections": "",
-    "Lecture": "",
-    "Tutorial": "",
-    "Lab": ""
-  },
+
   {
     "Course Code": "IN 106",
     "Course Name": "Comprehensive Viva Voce (Third Year B.Tech. Students)",
@@ -663,14 +640,7 @@
     "Tutorial": "G1\n(7/202)",
     "Lab": ""
   },
-  {
-    "Course Code": "HS XXX",
-    "Course Name": "HSS Elective",
-    "Sections": "",
-    "Lecture": "",
-    "Tutorial": "",
-    "Lab": ""
-  },
+
   {
     "Course Code": "IN 106",
     "Course Name": "Comprehensive Viva Voce (Third Year B.Tech. Students)",
@@ -768,14 +738,6 @@
     "Lab": "J1\n(10/101)\nK1\n(7/209)"
   },
   {
-    "Course Code": "HS XXX",
-    "Course Name": "HSS Elective",
-    "Sections": "",
-    "Lecture": "",
-    "Tutorial": "",
-    "Lab": ""
-  },
-  {
     "Course Code": "IN 106",
     "Course Name": "Comprehensive Viva Voce (Third Year B.Tech. Students)",
     "Sections": "",
@@ -858,14 +820,6 @@
   {
     "Course Code": "",
     "Course Name": "BS Elective",
-    "Sections": "",
-    "Lecture": "",
-    "Tutorial": "",
-    "Lab": ""
-  },
-  {
-    "Course Code": "HS XXX",
-    "Course Name": "HSS Elective",
     "Sections": "",
     "Lecture": "",
     "Tutorial": "",
