@@ -6,3 +6,13 @@ body {
 .copy {
   margin-top: 10px;
 }
+
+.btn-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px;
+}
+
+.table .text-center {
+  text-align: center;
+}
