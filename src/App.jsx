@@ -34,13 +34,14 @@ function App() {
       </main>
       <footer>
         <p>
-          You can view the source code{" "}
+          View the source code for this project on{" "}
           <a
             href="https://github.com/naim195/timetable-generator"
             target="_blank"
+            rel="noopener noreferrer"
             style={{ color: 'blue' }}
           >
-            here
+            GitHub
           </a>
         </p>
       </footer>
