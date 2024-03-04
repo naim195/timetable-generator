@@ -38,6 +38,7 @@ function App() {
           <a
             href="https://github.com/naim195/timetable-generator"
             target="_blank"
+            style={{ color: 'blueviolet' }}
           >
             here
           </a>
