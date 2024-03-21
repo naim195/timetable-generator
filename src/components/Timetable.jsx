@@ -16,17 +16,20 @@ const Timetable = ({ selectedCourses }) => {
   const slotToCourse = {};
   selectedCourses.forEach((course) => {
     course.Lecture.forEach((slot) => {
+      slot = slot.trim();
       slotToCourse[slot] = course["Course Code"];
     });
 
     if (course.Tutorial.length <= 2) {
       course.Tutorial.forEach((slot) => {
+        slot = slot.trim();
         slotToCourse[slot] = `${course["Course Code"]}(T)`;
       });
     }
 
     if (course.Lab.length <= 2) {
       course.Lab.forEach((slot) => {
+        slot = slot.trim();
         slotToCourse[slot] = `${course["Course Code"]}(Lab)`;
       });
     }
@@ -55,7 +58,7 @@ const Timetable = ({ selectedCourses }) => {
             slotToCourse[slot.Th] || slot.Th,
             slotToCourse[slot.F] || slot.F,
           ].join("\t");
-        }),
+        })
       )
       .join("\n");
 
