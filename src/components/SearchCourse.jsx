@@ -1,21 +1,41 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { TextField } from "@mui/material";
 import TrieSearch from "trie-search";
-import timetable from "../timetable_data.json";
+import timetableWithRedundant from "../timetable_data.json";
 import DisplayCourses from "./DisplayCourse";
+import PropTypes from "prop-types";
 
-const removeRedundant = () => {
-  timetable.forEach((course) => {
+// Function to remove redundant courses and process the timetable
+const removeRedundant = (timetableWithRedundant) => {
+  const seenCourseCodes = new Set();
+  return timetableWithRedundant.filter((course) => {
+    if (
+      !course ||
+      course["Course Code"] === null ||
+      (typeof course["Course Code"] !== "undefined" &&
+        course["Course Code"].includes("XXX"))
+    ) {
+      return false;
+    }
+    if (seenCourseCodes.has(course["Course Code"])) {
+      return false;
+    } else {
+      seenCourseCodes.add(course["Course Code"]);
+    }
     for (let prop in course) {
-      if (course[prop].includes("\n")) {
+      if (typeof course[prop] === "string" && course[prop].includes("\n")) {
         course[prop] = course[prop].split("\n")[0];
       }
-      if (prop === "Lecture" || prop === "Tutorial" || prop === "Lab")
+      if (prop === "Lecture" || prop === "Tutorial" || prop === "Lab") {
         course[prop] = course[prop].split("\n")[0].split(",");
+      }
     }
+    return true;
   });
 };
-removeRedundant();
+
+// Cleaned and processed timetable
+const timetable = removeRedundant(timetableWithRedundant);
 
 export default function SearchCourse({ addToSelected, selectedCourses }) {
   const [courseNameOrID, setCourseNameOrID] = useState("");
@@ -49,3 +69,8 @@ export default function SearchCourse({ addToSelected, selectedCourses }) {
     </div>
   );
 }
+
+SearchCourse.propTypes = {
+  addToSelected: PropTypes.func.isRequired,
+  selectedCourses: PropTypes.arrayOf(PropTypes.object).isRequired,
+};

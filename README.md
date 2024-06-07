@@ -1,6 +1,6 @@
 # Timetable Generator
 
-This is a timetable generator for the courses offered at IITGN during the 2nd Semester, 2023-24.
+This is a timetable generator for the courses offered at IITGN during the 1st Semester, 2024-25.
 
 ---
 

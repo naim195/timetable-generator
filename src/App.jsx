@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import SearchCourse from "./components/SearchCourse";
 import Selected from "./components/Selected";
@@ -39,7 +39,7 @@ function App() {
             href="https://github.com/naim195/timetable-generator"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ color: 'blue' }}
+            style={{ color: "blue" }}
           >
             GitHub
           </a>

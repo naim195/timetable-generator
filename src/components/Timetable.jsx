@@ -7,30 +7,51 @@ import {
   TableCell,
   Button,
   Tooltip,
+  Alert,
 } from "@mui/material";
 import timetableSlots from "../timetable_slots.json";
 import "../styles/timetable.css";
 import html2canvas from "html2canvas";
+import PropTypes from "prop-types";
 
 const Timetable = ({ selectedCourses }) => {
   const slotToCourse = {};
-  selectedCourses.forEach((course) => {
-    course.Lecture.forEach((slot) => {
-      slot = slot.trim();
-      slotToCourse[slot] = course["Course Code"];
-    });
+  const clashingCourses = new Set();
 
-    if (course.Tutorial.length <= 2) {
-      course.Tutorial.forEach((slot) => {
+  selectedCourses.forEach((course) => {
+    if (course.Lecture && course.Lecture.length > 0) {
+      course.Lecture.forEach((slot) => {
         slot = slot.trim();
-        slotToCourse[slot] = `${course["Course Code"]}(T)`;
+        if (slotToCourse[slot]) {
+          clashingCourses.add(course["Course Code"]);
+          clashingCourses.add(slotToCourse[slot]);
+        } else {
+          slotToCourse[slot] = course["Course Code"];
+        }
       });
     }
 
-    if (course.Lab.length <= 2) {
+    if (course.Tutorial && course.Tutorial.length <= 2) {
+      course.Tutorial.forEach((slot) => {
+        slot = slot.trim();
+        if (slotToCourse[slot]) {
+          clashingCourses.add(course["Course Code"]);
+          clashingCourses.add(slotToCourse[slot]);
+        } else {
+          slotToCourse[slot] = `${course["Course Code"]}(T)`;
+        }
+      });
+    }
+
+    if (course.Lab && course.Lab.length <= 2) {
       course.Lab.forEach((slot) => {
         slot = slot.trim();
-        slotToCourse[slot] = `${course["Course Code"]}(Lab)`;
+        if (slotToCourse[slot]) {
+          clashingCourses.add(course["Course Code"]);
+          clashingCourses.add(slotToCourse[slot]);
+        } else {
+          slotToCourse[slot] = `${course["Course Code"]}(Lab)`;
+        }
       });
     }
   });
@@ -58,7 +79,7 @@ const Timetable = ({ selectedCourses }) => {
             slotToCourse[slot.Th] || slot.Th,
             slotToCourse[slot.F] || slot.F,
           ].join("\t");
-        })
+        }),
       )
       .join("\n");
 
@@ -80,9 +101,16 @@ const Timetable = ({ selectedCourses }) => {
 
   return (
     <div>
+      {clashingCourses.size > 0 && (
+        <Alert severity="warning">
+          Warning: The following courses are clashing:{" "}
+          {Array.from(clashingCourses).join(", ")}
+        </Alert>
+      )}
       <h3>
-        Note: Lab/tutorial slots for courses with multiple sections won't appear
-        in the timetable. Please add your lab slot manually for such courses.
+        Note: Lab/tutorial slots for courses with multiple sections will not
+        appear for you given slot in the timetable. Please add your lab slot
+        manually for such courses.
       </h3>
       <Table ref={tableRef} className="table">
         <TableHead>
@@ -143,6 +171,18 @@ const Timetable = ({ selectedCourses }) => {
       </div>
     </div>
   );
+};
+
+Timetable.propTypes = {
+  selectedCourses: PropTypes.arrayOf(
+    PropTypes.shape({
+      "Course Code": PropTypes.string.isRequired,
+      "Course Name": PropTypes.string.isRequired,
+      Lecture: PropTypes.arrayOf(PropTypes.string),
+      Tutorial: PropTypes.arrayOf(PropTypes.string),
+      Lab: PropTypes.arrayOf(PropTypes.string),
+    }),
+  ).isRequired,
 };
 
 export default Timetable;

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Button, Checkbox, List, ListItem, ListItemText } from "@mui/material";
+import PropTypes from "prop-types";
+import { Button, List, ListItem, ListItemText } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 const Selected = ({
@@ -30,13 +30,25 @@ const Selected = ({
       {selectedCourses.length > 0 && (
         <Button
           variant="contained"
-          onClick={() => setGenerateTable(generateTable == -1 ? 1 : 1)}
+          onClick={() => setGenerateTable(generateTable === -1 ? 1 : 1)}
         >
           Generate Timetable
         </Button>
       )}
     </div>
   );
+};
+
+Selected.propTypes = {
+  selectedCourses: PropTypes.arrayOf(
+    PropTypes.shape({
+      "Course Code": PropTypes.string.isRequired,
+      "Course Name": PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+  setSelectedCourses: PropTypes.func.isRequired,
+  generateTable: PropTypes.number.isRequired,
+  setGenerateTable: PropTypes.func.isRequired,
 };
 
 export default Selected;
