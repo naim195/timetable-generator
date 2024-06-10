@@ -1,5 +1,8 @@
 [
   {
+    "Course Code": "First Year(2024)"
+  },
+  {
     "Course Code": "FP 100",
     "Course Name": "Foundation Programme"
   },
@@ -7,7 +10,7 @@
     "Course Code": "ES 101",
     "Course Name": "Engineering Graphics",
     "Lecture": "A2\n (Jasubhai Auditorium)",
-    "Lab": "N1,N2\n(1/101,1/102,7/108,7/109,7/208,7/209,10/104,10/105,10/203,10/204)"
+    "Lab": "N1,N2 (1/101,1/102,7/108,7/109,7/208,7/209,10/104,10/105,10/203,10/204)"
   },
   {
     "Course Code": "ES 112",
@@ -31,7 +34,7 @@
     "Course Code": "HS 191",
     "Course Name": "Introduction to Writing I",
     "Lecture": "H2\n(7/101,7/210,7/103,7/104,7/105,7/106,7/110,7/201,7/204,7/205,7/206,7/207,7/102,7/107)",
-    "Lab": "G1,G2 (7/101,7/210,7/103,7/104,7/105,7/106,7/110,7/201,7/204,7/205,7/206,7/207,7/102,7/107)\nC1,C2\n(7/104,7/105,7/201)"
+    "Lab": "G1,G2\n (7/101,7/210,7/103,7/104,7/105,7/106,7/110,7/201,7/204,7/205,7/206,7/207,7/102,7/107)\nC1,C2\n(7/104,7/105,7/201)"
   },
   {
     "Course Code": "MA 103",
@@ -51,6 +54,9 @@
   {
     "Course Code": "IN 101",
     "Course Name": "Comprehensive Viva Voce"
+  },
+  {
+    "Course Code": "Second Year(2023)"
   },
   {
     "Course Code": "ES 243",
@@ -171,7 +177,7 @@
   {
     "Course Code": "ME 206",
     "Course Name": "Statics & Dynamics",
-    "Lecture": "B1,B2\n (10/102)",
+    "Lecture": "C1,C2\n (7/208)",
     "Lab": "J1\n(7/203)"
   },
   {
@@ -181,6 +187,9 @@
   {
     "Course Code": "IN 103",
     "Course Name": "Comprehensive Viva Voce"
+  },
+  {
+    "Course Code": "5th Sem Chemical Engineering"
   },
   {
     "Course Code": "HS 151",
@@ -218,9 +227,6 @@
     "Course Name": "HSS Elective"
   },
   {
-    "Course Name": "Open Project Course"
-  },
-  {
     "Course Code": "IN 105",
     "Course Name": "Comprehensive Viva Voce"
   },
@@ -251,6 +257,9 @@
   {
     "Course Code": "IN 107",
     "Course Name": "Comprehensive Viva Voce"
+  },
+  {
+    "Course Code": "5th Sem Civil Engineering"
   },
   {
     "Course Code": "HS 151",
@@ -316,6 +325,9 @@
     "Course Name": "Comprehensive Viva Voce"
   },
   {
+    "Course Code": "5th Sem Computer Science and Engineering"
+  },
+  {
     "Course Code": "HS 151",
     "Course Name": "Economics",
     "Lecture": "C1,C2\n (Jasubhai Auditorium)",
@@ -344,6 +356,10 @@
     "Lecture": "F1,F2\n (10/201)"
   },
   {
+    "Course Code": "HS 3XX",
+    "Course Name": "HSS Elective"
+  },
+  {
     "Course Name": "Open Project Course"
   },
   {
@@ -351,10 +367,17 @@
     "Course Name": "Comprehensive Viva Voce"
   },
   {
+    "Course Code": "7th Sem Computer Science and Engineering"
+  },
+  {
     "Course Name": "Open Elective"
   },
   {
     "Course Name": "Open Elective"
+  },
+  {
+    "Course Code": "HS 3XX",
+    "Course Name": "HSS Elective"
   },
   {
     "Course Code": "IN 107",
@@ -564,6 +587,15 @@
     "Course Name": "HSS Elective"
   },
   {
+    "Course Name": "Basic Science Elective"
+  },
+  {
+    "Course Name": "Open Elective"
+  },
+  {
+    "Course Name": "Open Elective"
+  },
+  {
     "Course Code": "IN 107",
     "Course Name": "Comprehensive Viva Voce"
   },
@@ -582,6 +614,9 @@
     "Course Name": "Aarohan (For 2024 MTech, PGDIIT and PhD students)"
   },
   {
+    "Course Code": "Additional Courses: Physical Education for Postgraduate Students"
+  },
+  {
     "Course Code": "PE 500",
     "Course Name": "Physical Education (For 2024 MSc and MA students)"
   },
@@ -589,7 +624,9 @@
     "Course Code": "PE 600",
     "Course Name": "Physical Education (For 2024 MTech, PGDIIT and PhD students)"
   },
-
+  {
+    "Course Code": "Additional courses BE"
+  },
   {
     "Course Code": "BE 303",
     "Course Name": "Bionanotechnology – Principles and Applications",
@@ -626,7 +663,9 @@
     "Course Name": "Human Physiology",
     "Lecture": "I1,I2\n (7/101)"
   },
-
+  {
+    "Course Code": "Additional courses CE"
+  },
   {
     "Course Code": "CE 601",
     "Course Name": "Advanced Geotechnical Engineering",
@@ -689,6 +728,9 @@
     "Lecture": "L1,L2\n (7/103)"
   },
   {
+    "Course Code": "Additional courses CL"
+  },
+  {
     "Course Code": "CL 324",
     "Course Name": "Introduction to Polymer Science and Engineering",
     "Lecture": "G1,G2\n (10/202)"
@@ -734,6 +776,15 @@
     "Lecture": "K1,K2\n(7/208)"
   },
   {
+    "Course Code": "Additional courses CSE"
+  },
+  {
+    "Course Code": "ES 335",
+    "Course Name": "Machine Learning",
+    "Lecture": "P1,P2\n(10/103)",
+    "Tutorial": "J1\n(10/103)"
+  },
+  {
     "Course Code": "CS 431",
     "Course Name": "Computer and Network Security",
     "Lecture": "G2,H2\n (1/102)"
@@ -763,7 +814,9 @@
     "Course Name": "Special Topics in CSE: Toolkit for Theoretical Computer Science",
     "Lecture": "I1,I2\n (7/210)"
   },
-
+  {
+    "Course Code": "Additional courses EE"
+  },
   {
     "Course Code": "ES 417",
     "Course Name": "5G and Beyond: An Introduction",
@@ -847,7 +900,9 @@
     "Course Name": "Special Topics in Electrical Engineering: Economics of Regulation in India",
     "Lecture": "K1,K2\n (7/210)"
   },
-
+  {
+    "Course Code": "Additional courses ME"
+  },
   {
     "Course Code": "ES 408",
     "Course Name": "Mechatronics",
@@ -895,7 +950,9 @@
     "Course Name": "Special Topics in Mechanical Engineering - Phase Change Phenomena",
     "Lecture": "J1,J2\n (7/106)"
   },
-
+  {
+    "Course Code": "Additional courses MSE"
+  },
   {
     "Course Code": "MSE 304",
     "Course Name": "Principles of Metal Extraction and Refining",
@@ -912,7 +969,9 @@
     "Lecture": "A1,A2\n (7/203)",
     "Lab": "J1,L1\n(MSE Lab)"
   },
-
+  {
+    "Course Code": "Additional courses CH"
+  },
   {
     "Course Code": "CH 202",
     "Course Name": "Chemistry Laboratory",
@@ -997,7 +1056,9 @@
     "Course Name": "Statistical Thermodynamics and its Applications in Chemistry",
     "Lecture": "L1,L2\n (7/207)"
   },
-
+  {
+    "Course Code": "Additional courses MA"
+  },
   {
     "Course Code": "MA 501",
     "Course Name": "Basic Algebra",
@@ -1031,7 +1092,7 @@
   {
     "Course Code": "MA 605",
     "Course Name": "Commutative Algebra",
-    "Lecture": "F1,F2\n (7/203)"
+    "Lecture": "N1,N2\n (7/201)"
   },
   {
     "Course Code": "MA 624",
@@ -1053,7 +1114,7 @@
   {
     "Course Code": "MA 630",
     "Course Name": "Probability Theory",
-    "Lecture": "N1,N2\n (7/201)"
+    "Lecture": "F1,F2\n (7/203)"
   },
   {
     "Course Code": "MA 634",
@@ -1065,7 +1126,10 @@
     "Course Name": "Matrix Lie Groups",
     "Lecture": "P1,P2\n (7/205)"
   },
-
+  null,
+  {
+    "Course Code": "Additional courses PH"
+  },
   {
     "Course Code": "ES 410",
     "Course Name": "Introduction to Inverse Modelling in Physical Sciences",
@@ -1136,7 +1200,9 @@
     "Course Name": "Advanced Statistical Physics",
     "Lecture": "C1,C2\n (7/101)"
   },
-
+  {
+    "Course Code": "Additional Course EH"
+  },
   {
     "Course Code": "EH 601",
     "Course Name": "Earth Surface Processes in the Anthropocene",
@@ -1174,7 +1240,9 @@
     "Course Name": "Microwave Remote Sensing",
     "Lecture": "L1,L2\n (7/110)"
   },
-
+  {
+    "Course Code": "Additional Courses CG"
+  },
   {
     "Course Code": "CG 501",
     "Course Name": "Computation and Cognition",
@@ -1220,7 +1288,9 @@
     "Course Name": "Special Topics in Cognitive Science: Language and Brain",
     "Lecture": "M1,M2\n(7/209)"
   },
-
+  {
+    "Course Code": "Additional Courses Design, HSS, Management"
+  },
   {
     "Course Code": "FP 602",
     "Course Name": "Writing (PG)",
@@ -1243,6 +1313,16 @@
     "Course Name": "Urdu Poetry Interpretation",
     "Lecture": "P1,P2\n (7/110)",
     "Tutorial": "G1\n (1/102)"
+  },
+  {
+    "Course Code": "HS 191-I",
+    "Course Name": "Special Topics in HSS: Mandarin for Beginners",
+    "Lecture": "N1,N2\n(7/210)"
+  },
+  {
+    "Course Code": "HS 191-II",
+    "Course Name": "Special Topics in HSS: Basic Mandarin Conversation (Listening and Speaking)",
+    "Lecture": "L1,L2\n(10/102)"
   },
   {
     "Course Code": "MS 408",

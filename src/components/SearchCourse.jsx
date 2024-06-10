@@ -11,9 +11,11 @@ const removeRedundant = (timetableWithRedundant) => {
   return timetableWithRedundant.filter((course) => {
     if (
       !course ||
-      course["Course Code"] === null ||
-      (typeof course["Course Code"] !== "undefined" &&
-        course["Course Code"].includes("XXX"))
+      !(
+        Object.hasOwn(course, "Course Code") &&
+        Object.hasOwn(course, "Course Name")
+      ) ||
+      course["Course Code"].includes("XX")
     ) {
       return false;
     }
