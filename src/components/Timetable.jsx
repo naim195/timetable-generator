@@ -8,6 +8,7 @@ import {
   Button,
   Tooltip,
   Alert,
+  Box,
 } from "@mui/material";
 import timetableSlots from "../timetable_slots.json";
 import "../styles/timetable.css";
@@ -17,6 +18,7 @@ import PropTypes from "prop-types";
 const Timetable = ({ selectedCourses }) => {
   const slotToCourse = {};
   const clashingCourses = new Set();
+  let notAdded = new Set();
 
   selectedCourses.forEach((course) => {
     if (course.Lecture && course.Lecture.length > 0) {
@@ -31,28 +33,36 @@ const Timetable = ({ selectedCourses }) => {
       });
     }
 
-    if (course.Tutorial && course.Tutorial.length <= 2) {
-      course.Tutorial.forEach((slot) => {
-        slot = slot.trim();
-        if (slotToCourse[slot]) {
-          clashingCourses.add(course["Course Code"]);
-          clashingCourses.add(slotToCourse[slot]);
-        } else {
-          slotToCourse[slot] = `${course["Course Code"]}(T)`;
-        }
-      });
+    if (course.Tutorial && course.Tutorial.length > 0) {
+      if (course.Tutorial.length <= 2) {
+        course.Tutorial.forEach((slot) => {
+          slot = slot.trim();
+          if (slotToCourse[slot]) {
+            clashingCourses.add(course["Course Code"]);
+            clashingCourses.add(slotToCourse[slot]);
+          } else {
+            slotToCourse[slot] = `${course["Course Code"]}(T)`;
+          }
+        });
+      } else {
+        notAdded.add(course["Course Code"]);
+      }
     }
 
-    if (course.Lab && course.Lab.length <= 2) {
-      course.Lab.forEach((slot) => {
-        slot = slot.trim();
-        if (slotToCourse[slot]) {
-          clashingCourses.add(course["Course Code"]);
-          clashingCourses.add(slotToCourse[slot]);
-        } else {
-          slotToCourse[slot] = `${course["Course Code"]}(Lab)`;
-        }
-      });
+    if (course.Lab && course.Lab.length > 0) {
+      if (course.Lab.length <= 2) {
+        course.Lab.forEach((slot) => {
+          slot = slot.trim();
+          if (slotToCourse[slot]) {
+            clashingCourses.add(course["Course Code"]);
+            clashingCourses.add(slotToCourse[slot]);
+          } else {
+            slotToCourse[slot] = `${course["Course Code"]}(Lab)`;
+          }
+        });
+      } else {
+        notAdded.add(course["Course Code"]);
+      }
     }
   });
 
@@ -101,12 +111,22 @@ const Timetable = ({ selectedCourses }) => {
 
   return (
     <div>
-      {clashingCourses.size > 0 && (
-        <Alert severity="warning">
-          Warning: The following courses are clashing:{" "}
-          {Array.from(clashingCourses).join(", ")}
-        </Alert>
-      )}
+      <Box display="flex" flexDirection="column" gap={2}>
+        {clashingCourses.size > 0 && (
+          <Alert severity="warning" variant="outlined">
+            <strong>Warning:</strong> The following courses are clashing:{" "}
+            {Array.from(clashingCourses).join(", ")}
+          </Alert>
+        )}
+        {notAdded.size > 0 && (
+          <Alert severity="warning" variant="outlined">
+            <strong>Attention Needed:</strong> The following courses require
+            manual addition of lab/tutorial slots due to multiple sections:{" "}
+            {Array.from(notAdded).join(", ")}. Please add the correct slots for
+            these courses as per your section.
+          </Alert>
+        )}
+      </Box>
       <h3>
         Note: Lab/tutorial slots for courses with multiple sections will not
         appear for you given slot in the timetable. Please add your lab slot
