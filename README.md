@@ -39,7 +39,7 @@ This project is a Timetable Generator web application built using React. It allo
 
 - **Labs**: Lab/Tutorial slots for courses in which students are divided into multiple sections will not show up in the generated timetable. Only the lecture slots for such courses will be displayed on the generated timetable.
 
-- **Dynamic Data**: The application uses static JSON data and does not fetch real-time updates from Google Sheets. I do plan to add this in the future. However, anyone willing to add this functionality can create a pull request.
+
 
 ## Technologies Used
 
