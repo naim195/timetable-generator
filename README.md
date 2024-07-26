@@ -1,6 +1,6 @@
 # Timetable Generator
 
-This is a timetable generator for the courses offered at IITGN during the 1st Semester, 2024-25.
+This is a timetable generator for the courses offered at IITGN during the 1st Semester, 2024-25. A [better version](https://github.com/naim195/timetable-generator-vercel) of this project is [deployed to vercel](https://timetable-generator-khaki.vercel.app/). There, I fetch the sheet data directly from Google Sheets instead of a static file.
 
 ---
 
